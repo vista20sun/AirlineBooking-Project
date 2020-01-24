@@ -1,0 +1,19 @@
+CREATE OR REPLACE FUNCTION register(fName TEXT,mName TEXT,lName TEXT, uName TEXT, pwd TEXT)
+RETURNS BOOLEAN
+AS
+$$
+DECLARE
+	uid INT;
+BEGIN
+	INSERT INTO customer VALUES(DEFAULT,fName,mName,lName,DEFAULT) RETURNING user_id INTO uid;
+	INSERT INTO login_info VALUES(uName,pwd,uid);
+	RETURN TRUE;
+EXCEPTION
+	WHEN others THEN
+		RETURN FALSE;
+END;
+$$
+LANGUAGE plpgsql;
+
+
+
