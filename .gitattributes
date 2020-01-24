@@ -1,3 +1,4 @@
 load_data/s_flight_q1.sql filter=lfs diff=lfs merge=lfs -text
 load_data/s_flight_q1.sql filter=lfs diff=lfs merge=lfs -text
 load_data/s_flight_q1.sql filter=lfs diff=lfs merge=lfs -text
+load_data/s_flight_q1.sql filter=lfs diff=lfs merge=lfs -text
